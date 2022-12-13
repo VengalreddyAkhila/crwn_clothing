@@ -1,43 +1,37 @@
 import './categories.styles.scss'
+import CategoryItem from './components/category-item.component';
+import Directory from './directory/directory.component';
 const App = () => {
 
   const categories =[
   {
     id:  1,
-    title:'Hats'
+    title:'Hats',
+    imageUrl:'crwn-clothing-app/Stetson_Tullamore_Distressed_Leather_Safari_Hat_HatsUnlimited.com_Hats_Unlimited_STW237_Brown_Stock_Image_1__06319.jpg'
   },
   {
     id:  2,
-    title:'Jackets'
+    title:'Jackets',
+    imageUrl:'C:/Users/91966/Desktop/React/React_Practiceprblm/crwn_clothing/crwn-clothing-app/th.jpg'
   },
   {
     id:  3,
-    title:'Sneakers'
+    title:'Sneakers',
+    imageUrl:'crwn-clothing-app/th (1).jpg'
   },
   {
     id:  4,
-    title:'Womens'
+    title:'Womens',
+    imageUrl:'crwn-clothing-app/th (2).jpg'
   },
   {
     id:  5,
-    title:'Men'
+    title:'Men',
+    imageUrl:'crwn-clothing-app/th (3).jpg'
   },
 ]
   return (
-    <div className="categories-container">
-      {categories.map(({title}) => (
-          <div className="category-container">
-          <div className="background-image"/>
-          <div className="category-body-container">
-            <h2>{title}</h2>
-            <p>Shop Now</p>
-          </div>
-         </div>
-
-      ))}
-      
-    
-    </div>
+    <Directory categories={categories}/>
   );
 }
 
