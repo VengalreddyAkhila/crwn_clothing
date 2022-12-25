@@ -1,32 +1,32 @@
 import { Outlet } from 'react-router-dom';
-import Directory from '../../directory/directory.component'
+import Directory from '../../components/directory/directory.component'
 
 const Home = () => {
     const categories = [
         {
             id: 1,
             title: 'Hats',
-            imageUrl: 'crwn-clothing-app/Stetson_Tullamore_Distressed_Leather_Safari_Hat_HatsUnlimited.com_Hats_Unlimited_STW237_Brown_Stock_Image_1__06319.jpg'
+            imageUrl: 'https://tse4.mm.bing.net/th?id=OIP.qa7yCAo1XJjmcY7in8wp8QHaHa&pid=Api&P=0'
         },
         {
             id: 2,
             title: 'Jackets',
-            imageUrl: 'C:/Users/91966/Desktop/React/React_Practiceprblm/crwn_clothing/crwn-clothing-app/th.jpg'
+            imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.6z4Y3l5MQNassNypA4ZyGAHaIQ&pid=Api&P=0'
         },
         {
             id: 3,
             title: 'Sneakers',
-            imageUrl: 'crwn-clothing-app/th (1).jpg'
+            imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.Be3ghD5XCzD8sOouNQHZigHaE8&pid=Api&P=0'
         },
         {
             id: 4,
             title: 'Womens',
-            imageUrl: 'crwn-clothing-app/th (2).jpg'
+            imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.XJVddGfeufAO7SIU9CUA7wHaEK&pid=Api&P=0'
         },
         {
             id: 5,
             title: 'Men',
-            imageUrl: 'crwn-clothing-app/th (3).jpg'
+            imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.4K8q158HbKJC6LnZE_idlAHaHY&pid=Api&P=0'
         },
     ]
     return (

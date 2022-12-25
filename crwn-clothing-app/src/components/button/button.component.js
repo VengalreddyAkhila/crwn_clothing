@@ -7,7 +7,6 @@
  */
 
 
-import { Children } from "react"
 import './button.styles.scss'
 
 const BUTTON_TYPE_CLASSES ={
@@ -15,9 +14,9 @@ const BUTTON_TYPE_CLASSES ={
     inverted:'inverted'
 }
 
-const Button =({Children , buttonType,...otherProps}) => {
+const Button =({children , buttonType,...otherProps}) => {
     return <button className= {`button-container ${BUTTON_TYPE_CLASSES[buttonType]}`}
-    {...otherProps}>{Children}</button>
+    {...otherProps}>{children}</button>
 }
 
 export default Button
