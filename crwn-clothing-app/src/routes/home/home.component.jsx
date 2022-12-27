@@ -6,7 +6,7 @@ const Home = () => {
         {
             id: 1,
             title: 'Hats',
-            imageUrl: 'https://tse4.mm.bing.net/th?id=OIP.qa7yCAo1XJjmcY7in8wp8QHaHa&pid=Api&P=0'
+            imageUrl: 'crwn-clothing-app/src/assests/th (1).jpg'
         },
         {
             id: 2,
