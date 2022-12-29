@@ -7,27 +7,32 @@ const Directory = () => {
     {
         id: 1,
         title: 'Hats',
-        imageUrl: 'crwn-clothing-app/src/assests/th (1).jpg'
+        imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+        route:'shop/hats'
     },
     {
         id: 2,
         title: 'Jackets',
-        imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.6z4Y3l5MQNassNypA4ZyGAHaIQ&pid=Api&P=0'
+        imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+        route:'shop/jackets'
     },
     {
         id: 3,
         title: 'Sneakers',
-        imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.Be3ghD5XCzD8sOouNQHZigHaE8&pid=Api&P=0'
+        imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+        route:'shop/sneakers'
     },
     {
         id: 4,
         title: 'Womens',
-        imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.XJVddGfeufAO7SIU9CUA7wHaEK&pid=Api&P=0'
+        imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+        route:'shop/womens'
     },
     {
         id: 5,
         title: 'Men',
-        imageUrl: 'https://tse1.mm.bing.net/th?id=OIP.4K8q158HbKJC6LnZE_idlAHaHY&pid=Api&P=0'
+        imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+        route:'shop/men'
     },
 ]
   

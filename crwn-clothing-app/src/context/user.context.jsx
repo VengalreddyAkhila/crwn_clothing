@@ -1,28 +1,57 @@
-import { createContext,useState,useEffect } from "react";
-import { onAuthStateChangedListener,signOutUser,createUserDocumentDromAuth } from "../utils/firebase/firebase.utils";
+import { createContext,useEffect,useReducer } from "react";
+import { onAuthStateChangedListener,createUserDocumentDromAuth } from "../utils/firebase/firebase.utils";
 
 
 //as the actual value you want to access
 export const UserContext = createContext({
-    currentUser:null,
     setCurrentUser: () => null,
-
-});
-export const Userprovider = ({children}) => {
-    const [currentUser,setCurrentUser] = useState(null);
-    const value = {currentUser,setCurrentUser}
-    signOutUser()
-
+    currentUser: null,
+  });
+  
+  export const USER_ACTION_TYPES = {
+    SET_CURRENT_USER: 'SET_CURRENT_USER',
+  };
+  
+  const INITIAL_STATE = {
+    currentUser: null,
+  };
+  
+  const userReducer = (state, action) => {
+    console.log(action)
+    const { type, payload } = action;
+  
+    switch (type) {
+      case USER_ACTION_TYPES.SET_CURRENT_USER:
+        return {
+             ...state,
+              currentUser: payload 
+            };
+      default:
+        throw new Error(`Unhandled type ${type} in userReducer`);
+    }
+  };
+  
+  export const Userprovider = ({ children }) => {
+    const [{ currentUser }, dispatch] = useReducer(userReducer, INITIAL_STATE);
+    console.log(currentUser)
+  
+    const setCurrentUser = (user) =>
+      dispatch({ type: USER_ACTION_TYPES.SET_CURRENT_USER, payload: user });
+  
     useEffect(() => {
-        const unsubcribe = onAuthStateChangedListener((user) => {
-            if(user){
-                createUserDocumentDromAuth(user)
-            }
-            setCurrentUser(user)
-            console.log(user)
-        })
-        return unsubcribe
-
-    },[])
-    return <UserContext.Provider value = {value} >{children}</UserContext.Provider>
-}
+      const unsubscribe = onAuthStateChangedListener((user) => {
+        if (user) {
+          createUserDocumentDromAuth(user);
+        }
+        setCurrentUser(user);
+      });
+  
+      return unsubscribe;
+    }, []);
+  
+    const value = {
+      currentUser,
+    };
+  
+    return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+  };
